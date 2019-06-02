@@ -5,12 +5,12 @@ import (
     "log"
 )
 
-func EncodeB64(s string) string {
-    return b64.StdEncoding.EncodeToString([]byte(s))
+func EncodeB64URL(s string) string {
+    return b64.URLEncoding.EncodeToString([]byte(s))
 }
 
-func DecodeB64(s string) string {
-    sD, err := b64.StdEncoding.DecodeString(s)
+func DecodeB64URL(s string) string {
+    sD, err := b64.URLEncoding.DecodeString(s)
     if(err != nil){
         log.Fatal(err)
     }
